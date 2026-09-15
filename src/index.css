@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-primary: #141572;
+  --color-brand-secondary: #F5167E;
+  --font-display: "Proxima Nova", sans-serif;
+}
