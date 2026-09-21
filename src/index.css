@@ -6,3 +6,227 @@
   --color-brand-secondary: #F5167E;
   --font-display: "Proxima Nova", sans-serif;
 }
+
+
+
+
+
+
+/* =========================================================
+   1. CARD ENTRANCE ANIMATION
+   Animates the card into view when it first appears.
+   ========================================================= */
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.motion-card-enter {
+  animation: cardEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+
+/* =========================================================
+   2. MOUSE-FOLLOWING GLOW
+   Creates the soft colored light that follows the cursor
+   around the card.
+   ========================================================= */
+
+.motion-card-glow {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: 0;
+
+  transform: translate(-50%, -50%);
+
+  background: radial-gradient(
+    260px circle at 50% 50%,
+    rgba(236, 72, 153, 0.24),
+    rgba(124, 58, 237, 0.12) 35%,
+    transparent 70%
+  );
+
+  filter: blur(25px);
+
+  left: var(--mouse-x);
+  top: var(--mouse-y);
+
+  opacity: 0;
+
+  transition:
+    opacity 0.4s ease,
+    left 0.08s ease-out,
+    top 0.08s ease-out;
+}
+
+.motion-card:hover .motion-card-glow {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   3. CARD 3D TRANSFORM FOUNDATION
+   Enables 3D transformations and smooth mouse-based
+   rotation of the card.
+   ========================================================= */
+
+.motion-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform 0.15s ease-out;
+}
+
+
+/* =========================================================
+   4. INNER 3D LAYER
+   Keeps the card's inner elements inside the same 3D space.
+   ========================================================= */
+
+.motion-card-inner {
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   5. CONTENT DEPTH
+   Pushes the main card content forward in 3D space.
+   ========================================================= */
+
+.motion-card-content {
+  transform: translateZ(35px);
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   6. ICON 3D DEPTH
+   Pushes the icon farther forward than the main content.
+   ========================================================= */
+
+.motion-card-icon {
+  transform: translateZ(50px);
+}
+
+
+/* =========================================================
+   7. BUTTON 3D DEPTH
+   Pushes the button even farther forward to enhance
+   the layered 3D effect.
+   ========================================================= */
+
+.motion-card-button {
+  transform: translateZ(60px);
+}
+
+
+/* =========================================================
+   8. MOUSE-REACTIVE BORDER
+   Container for the cursor-following border glow.
+   ========================================================= */
+
+.motion-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* =========================================================
+   9. BORDER GLOW EFFECT
+   Creates the actual glowing rim around the card using
+   a radial gradient that follows the mouse position.
+   ========================================================= */
+
+.motion-card-border::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+
+  background: radial-gradient(
+    360px circle at var(--mouse-x) var(--mouse-y),
+    rgba(236, 72, 153, 0.9),
+    rgba(124, 58, 237, 0.5) 30%,
+    rgba(124, 58, 237, 0.15) 50%,
+    transparent 70%
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.35s ease;
+
+  /* Cut out the center so only the outer rim remains */
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  padding: 4px;
+}
+
+
+/* =========================================================
+   10. BORDER HOVER STATE
+   Reveals the mouse-following border glow when the
+   cursor enters the card.
+   ========================================================= */
+
+.motion-card:hover .motion-card-border::before {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   11. 3D RENDERING OPTIMIZATION
+   Improves rendering performance and prevents visual
+   artifacts while the card is being transformed.
+   ========================================================= */
+
+.motion-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.motion-card-inner {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+
+/* =========================================================
+   12. BUTTON ANIMATION OPTIMIZATION
+   Tells the browser that the button's transform may change,
+   improving performance during 3D interactions.
+   ========================================================= */
+
+.motion-card-button {
+  will-change: transform;
+}
+
+
+/* =========================================================
+   13. EFFECT LAYER OPTIMIZATION
+   Optimizes rendering for the card's animated visual effects.
+   ========================================================= */
+
+.motion-card-glow,
+.motion-card-border,
+.motion-card-shine {
+  will-change: opacity, transform;
+}

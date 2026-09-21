@@ -2,6 +2,7 @@ import { Hero } from '../components/landing-sections/Hero'
 import { useState } from 'react';
 import { mockEvents } from '../components/landing-data/mockEvents';
 import { SearchBar } from '../components/landing-sections/SearchBar';
+import { UpcomingEvents } from '../components/landing-sections/UpcomingEvents';
 
 
 
@@ -33,6 +34,7 @@ function Landing() {
         date={date}
         setDate={setDate}
         />
+        <UpcomingEvents events={filteredEvents} />
         </div>
     </div>
   )
