@@ -26,12 +26,12 @@ export function Hero() {
                 <Navbar /> 
                 </div>
                 {/*Title*/}
-                <div className="absolute top-[35%] left-0 right-0 flex flex-col items-center justify-center text-center text-white text-[45px] xl:text-[50px] p-4">            
+                <div className="absolute md:top-[35%] top-[25%]  left-0 right-0 flex flex-col items-center justify-center text-center text-white text-[45px] xl:text-[50px] p-4">            
               
                 <AnimatedTitle  text={event.title} />
                 {/*Description*/}
                 <div className=" mt-1 flex items-center justify-center  text-white text-[18px] xl:text-[20px] font-regular leading-none  px-5">
-                  <p className="lg:w-[50%] md:w-[60%]">{event.description}</p>
+                  <p className="lg:w-[50%] md:w-[60%]">{event.description.slice(0, 100) + "..."}</p>
                 </div>
 
                 {/*Button*/}

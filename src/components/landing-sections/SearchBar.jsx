@@ -15,14 +15,14 @@ export function SearchBar({
     const [isMonth, setIsMonth] = useState('Any date')
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <div className="w-full flex justify-center items-center md:px-0 px-4">
 
-      <div className="bg-brand-primary w-[90%] flex items-center justify-between px-20 rounded-[20px] py-10">
+      <div className="bg-brand-primary xl:w-[77%] md:w-[90%] w-full  flex flex-col md:flex-row items-center justify-between lg:px-20 px-10 gap-3  rounded-[20px] md:py-10 py-8">
         {/* search event by title */}
-        <div className="border-b border-white/50">
+        <div className="border-b border-white/50 w-full md:w-fit">
           <p className="text-[14px] text-white">Search Event</p>
           <input
-            className="border-none outline-none bg-transparent mt-5 font-bold text-[18px] placeholder:text-white text-white pb-1"
+            className="border-none md:w-[200px] lg:w-[300px] w-full outline-none bg-transparent mt-5 font-bold text-[18px] placeholder:text-white text-white pb-1 "
             placeholder="Search event"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -31,40 +31,43 @@ export function SearchBar({
 
 
         {/* search event by place */}
-        <div className="border-b border-white/50">
+        <div className="border-b border-white/50 w-full md:w-fit">
             <p className="text-[14px] text-white">Place</p>
            <input 
-            className="border-none outline-none bg-transparent mt-5 font-bold text-[18px] placeholder:text-white text-white pb-1"
+            className="border-none outline-none lg:w-[300px] md:w-[200px] full bg-transparent mt-5 font-bold text-[18px] placeholder:text-white text-white pb-1"
             placeholder="Place"
            value={place} onChange={(e) => setPlace(e.target.value)} /> 
         </div>
 
         
         {/* search event by date */}
-        <div>
-          <div>
+        <div className="w-full md:w-fit">
+          <div >
             <p className="text-[14px] text-white">Time</p>
-            <div className=" relative  mt-5 items-center border-b border-white/50">
+            <div className=" relative  mt-5  border-b border-white/50">
 
                  {/* container */}
-                 <div className="relative flex justify-center space-x-25 items-center">
-                    <p className="text-[18px] text-white font-bold pb-1">{isMonth}</p>
+                 <div className=" relative flex justify-start  lg:space-x-25 md:space-x-5 space-x-8 items-center ">
+                    <p className="text-[18px] text-white font-bold pb-1">
+                      {isMonth === "" ? "Any date" : isMonth}</p>
 
-                    {
-                     !isOpen && (
-                     <ChevronDown onClick={() => setIsOpen(!isOpen)}
-                     className="w-6 h-6 text-[18px] text-white font-bold pb-1 cursor-pointer" />
-                 )}
-                 {
-                    isOpen && (
-                    <ChevronUp onClick={() => setIsOpen(!isOpen)}
-                     className="w-6 h-6 text-[18px] text-white font-bold pb-1 cursor-pointer" /> 
-                    )}    
+                   {!isOpen && (
+                    <ChevronDown 
+                      onClick={() => setIsOpen(!isOpen)}
+                      className="w-6 h-6 text-[18px] text-white font-bold pb-1 cursor-pointer" 
+                    />
+                  )}
+                  {isOpen && (
+                    <ChevronUp 
+                      onClick={() => setIsOpen(!isOpen)}
+                      className="w-6 h-6 text-[18px] text-white font-bold pb-1 cursor-pointer" 
+                    />
+                  )}
                  </div>
                  
                  {/*Dropdown of events months*/}
                     {
-                    !isOpen && (
+                    isOpen && (
                      <div  className="absolute top-full left-0 w-full z-20 mt-2 bg-brand-primary/10 backdrop-blur-md max-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/40 scrollbar-track-transparent rounded-2xl p-3">
                         {
                           months.map((month) => (
