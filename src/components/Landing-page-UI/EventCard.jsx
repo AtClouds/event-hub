@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 
 export function EventCard({ event }) {
   /* =========================================================
@@ -388,7 +390,7 @@ export function EventCard({ event }) {
                 5.7.1 EXPLORE BUTTON
                 Main interactive button with 3D depth.
                 ------------------------------------------------- */}
-
+                <Link to={`/events/${event.id}`}>
                 <button
                 className="
                 flex w-full
@@ -430,6 +432,7 @@ export function EventCard({ event }) {
                         →
                       </span>
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>

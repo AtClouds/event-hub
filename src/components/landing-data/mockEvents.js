@@ -4,6 +4,7 @@ import eventThree from "../../assets/eventBannerThree.jpg";
 import eventFour from "../../assets/eventBannerFour.jpg";
 import eventFive from "../../assets/eventBannerFive.jpg";
 import eventSix from "../../assets/eventBannerSix.jpg";
+import { Type } from "lucide-react";
 
 export const mockEvents = [
   {
@@ -14,6 +15,8 @@ export const mockEvents = [
       "Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording.",
     date: "21 September, 2026",
     place: "Uyo",
+    type: "Live Music Experience",
+    openTime: "4:00PM"
     categories:  ["Music", "Nightlife", "Any Category"]
   },
   {
@@ -24,6 +27,8 @@ export const mockEvents = [
       "Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording",
     date: "01 October, 2026",
     place: "Port Harcourt",
+    type: "Night chilling Experience",
+    openTime: "9:00PM",
     categories:  ["Music", "Any Category"]
   },
   {
@@ -34,6 +39,8 @@ export const mockEvents = [
       "Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording",
     date: "05 November, 2026",
     place: "Lagos",
+     type: "Live Boxing Experience",
+    openTime: "5:00PM",
     categories:  ["Sport", "Nightlife", "Any Category"]
   },
   {
@@ -44,6 +51,8 @@ export const mockEvents = [
       "Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording",
     date: "26 December, 2026",
     place: "Uyo",
+    type: "Live Boxing Experience",
+    openTime: "6:00PM",
     categories:  ["Sport", "Nightlife", "Any Category"]
   },
   {
@@ -54,6 +63,8 @@ export const mockEvents = [
       "Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording",
     date: "14 August December, 2026",
     place: "Calaber",
+    type: "Live Football Experience",
+    openTime: "10:00AM",
     categories:  ["Sport", "Any Category"]
   },
    {
@@ -64,6 +75,8 @@ export const mockEvents = [
       "Look no further! Our SBS The Show tickets are the simplest way for you to experience a live Kpop recording",
     date: "30 November, 2026",
     place: "Uyo",
+    type: "Tech Experience",
+    openTime: "8:00AM",
     categories:  ["Tech", "Any Category"]
   },
 ];

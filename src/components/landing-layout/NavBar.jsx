@@ -8,7 +8,7 @@ export function Navbar() {
   return (
     <div className="">
       {/*Top nav bar Desktop*/}
-      <nav className="hidden lg:flex w-full items-center justify-between py-5 px-[5%]">
+      <nav className="hidden lg:flex w-full items-center justify-between py-8 xl:px-[12%] lg:px-[6%] md:px-[5%]">
         {/*Logo*/}
         <div>
           <a href="">

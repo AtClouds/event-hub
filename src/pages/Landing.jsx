@@ -4,7 +4,10 @@ import { mockEvents } from "../components/landing-data/mockEvents";
 import { SearchBar } from "../components/landing-sections/SearchBar";
 import { UpcomingEvents } from "../components/landing-sections/UpcomingEvents";
 import { months } from "../components/landing-data/months";
-import { CreateEvent } from "../pages/CreateEvent"
+import { CreateYourEvent } from "../components/landing-sections/MakeYourOwnEvent"
+import { Brands } from "../components/landing-sections/Brands";
+import { Blogs } from "../components/landing-sections/Blogs";
+import { Footer } from "../components/landing-layout/Footer";
 
 function Landing() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -31,7 +34,7 @@ function Landing() {
         <div>
           <Hero />
         </div>
-        <div className="absolute md:bottom-[-12%] bottom-[-46%] left-1/2 -translate-x-1/2 w-full z-99">
+        <div className="absolute md:bottom-[-12%] bottom-[-35%] left-1/2 -translate-x-1/2 w-full z-99">
           <SearchBar
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
@@ -43,14 +46,17 @@ function Landing() {
         </div>
       </div>
 
-      <div className="flex justify-center items-center space-x-5 md:mt-[10%] mt-[85%]">
+      <div className="flex justify-center items-center space-x-5 md:mt-[10%] mt-[70%]">
         <UpcomingEvents events={filteredEvents} />
       </div>
 
       <div>
 
       </div>
-        <CreateEvent />
+        <CreateYourEvent />
+        <Brands />
+        <Blogs />
+        <Footer />
     </div>
   );
 }

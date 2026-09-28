@@ -3,14 +3,9 @@
 
 @theme {
   --color-brand-primary: #141572;
-  --color-brand-secondary: #F5167E;
+  --color-brand-secondary: #f5167e;
   --font-display: "Proxima Nova", sans-serif;
 }
-
-
-
-
-
 
 /* =========================================================
    1. CARD ENTRANCE ANIMATION
@@ -32,7 +27,6 @@
 .motion-card-enter {
   animation: cardEnter 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
-
 
 /* =========================================================
    2. MOUSE-FOLLOWING GLOW
@@ -74,7 +68,6 @@
   opacity: 1;
 }
 
-
 /* =========================================================
    3. CARD 3D TRANSFORM FOUNDATION
    Enables 3D transformations and smooth mouse-based
@@ -87,7 +80,6 @@
   transition: transform 0.15s ease-out;
 }
 
-
 /* =========================================================
    4. INNER 3D LAYER
    Keeps the card's inner elements inside the same 3D space.
@@ -96,7 +88,6 @@
 .motion-card-inner {
   transform-style: preserve-3d;
 }
-
 
 /* =========================================================
    5. CONTENT DEPTH
@@ -108,7 +99,6 @@
   transform-style: preserve-3d;
 }
 
-
 /* =========================================================
    6. ICON 3D DEPTH
    Pushes the icon farther forward than the main content.
@@ -117,7 +107,6 @@
 .motion-card-icon {
   transform: translateZ(50px);
 }
-
 
 /* =========================================================
    7. BUTTON 3D DEPTH
@@ -128,7 +117,6 @@
 .motion-card-button {
   transform: translateZ(60px);
 }
-
 
 /* =========================================================
    8. MOUSE-REACTIVE BORDER
@@ -142,7 +130,6 @@
   pointer-events: none;
   z-index: 0;
 }
-
 
 /* =========================================================
    9. BORDER GLOW EFFECT
@@ -179,7 +166,6 @@
   padding: 4px;
 }
 
-
 /* =========================================================
    10. BORDER HOVER STATE
    Reveals the mouse-following border glow when the
@@ -189,7 +175,6 @@
 .motion-card:hover .motion-card-border::before {
   opacity: 1;
 }
-
 
 /* =========================================================
    11. 3D RENDERING OPTIMIZATION
@@ -208,7 +193,6 @@
   backface-visibility: hidden;
 }
 
-
 /* =========================================================
    12. BUTTON ANIMATION OPTIMIZATION
    Tells the browser that the button's transform may change,
@@ -219,7 +203,6 @@
   will-change: transform;
 }
 
-
 /* =========================================================
    13. EFFECT LAYER OPTIMIZATION
    Optimizes rendering for the card's animated visual effects.
@@ -229,4 +212,50 @@
 .motion-card-border,
 .motion-card-shine {
   will-change: opacity, transform;
+}
+
+/* =========================================================
+    Brand  logo marquee — scrolls direction 
+   ========================================================= */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee {
+  animation: marquee 12s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 12s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation-duration: 10s;
+  }
 }

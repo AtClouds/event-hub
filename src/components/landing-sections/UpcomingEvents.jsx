@@ -1,4 +1,4 @@
-import { EventCard } from "../Animmation/upcoming-event-motion-card/EventCard"
+import { EventCard } from "../Landing-page-UI/EventCard"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { eventCategories } from "../landing-data/eventCategories";
 import { useState } from "react";
@@ -109,8 +109,7 @@ export function UpcomingEvents({ events }) {
         justify-between
         rounded-xl
         border border-brand-primary
-        xl:px-4 xl:py-3.5
-        px-2 py-2 
+        px-4 py-2 
         text-sm
         font-medium
         text-black

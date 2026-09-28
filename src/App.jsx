@@ -10,6 +10,7 @@ import './App.css'
 
 function App() {
  
+    console.log("APP IS RUNNING");
 
   return (
     <Routes>

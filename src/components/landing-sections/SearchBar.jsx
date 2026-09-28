@@ -15,9 +15,10 @@ export function SearchBar({
     const [isMonth, setIsMonth] = useState('Any date')
 
   return (
-    <div className="w-full flex justify-center items-center md:px-0 px-4">
+    <div className="w-full flex justify-center items-center md:px-0 px-4  transition-all duration-300 ease-out mb-2 hover:-translate-y-2
+     ">
 
-      <div className="bg-brand-primary xl:w-[77%] md:w-[90%] w-full  flex flex-col md:flex-row items-center justify-between lg:px-20 px-10 gap-3  rounded-[20px] md:py-10 py-8">
+      <div className="bg-brand-primary/80 backdrop-blur-md xl:w-[77%] md:w-[90%] w-full  flex flex-col md:flex-row items-center justify-between lg:px-20 px-10 gap-3  rounded-[20px] md:py-10 py-8transition motion-card-button ">
         {/* search event by title */}
         <div className="border-b border-white/50 w-full md:w-fit">
           <p className="text-[14px] text-white">Search Event</p>
@@ -47,7 +48,7 @@ export function SearchBar({
             <div className=" relative  mt-5  border-b border-white/50">
 
                  {/* container */}
-                 <div className=" relative flex justify-start  lg:space-x-25 md:space-x-5 space-x-8 items-center ">
+                 <div className=" relative flex justify-start  xl:space-x-25 md:space-x-5 space-x-8 items-center ">
                     <p className="text-[18px] text-white font-bold pb-1">
                       {isMonth === "" ? "Any date" : isMonth}</p>
 
@@ -75,7 +76,7 @@ export function SearchBar({
                             key={month.value}
                             onClick={() => {
                                 setDate(month.value);
-                                setIsOpen(true);
+                                setIsOpen(false);
                                 setIsMonth(month.label)
                             }}
                             className="cursor-pointer hover:bg-white/30 px-2 py-1 text-[16px] rounded-[8px]"
