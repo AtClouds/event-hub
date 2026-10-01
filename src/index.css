@@ -1,12 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
 @plugin "tailwind-scrollbar";
 
 @theme {
   --color-brand-primary: #141572;
   --color-brand-secondary: #f5167e;
-  --font-display: "Proxima Nova", sans-serif;
+  --font-sans: "Manrope", sans-serif;
 }
 
+html,
+body {
+  font-family: "Manrope", sans-serif;
+}
 /* =========================================================
    1. CARD ENTRANCE ANIMATION
    Animates the card into view when it first appears.
