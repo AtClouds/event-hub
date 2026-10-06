@@ -4,6 +4,7 @@ import { mockEvents } from "../components/landing-data/mockEvents"
 import { AboutUs } from "../components/EventDetail-Section/AboutUs"
 import { LineUps } from "../components/EventDetail-Section/LineUps";
 import { Featuring } from "../components/EventDetail-Section/Featuring";
+import { TicketTiers } from "../components/EventDetail-Section/TicketTiers";
 
 function EventDetails() {
 
@@ -19,7 +20,8 @@ function EventDetails() {
        <Hero event={event} />
        <AboutUs event={event} />
        <LineUps  event={event} /> 
-       <Featuring event={event} />
+       {event.featuredPeople?.items?.length > 0 && <Featuring event={event} />}
+       <TicketTiers event={event} />
     </div>
   )
 }

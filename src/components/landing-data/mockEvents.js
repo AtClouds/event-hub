@@ -66,26 +66,29 @@ export const mockEvents = [
   ],
 
     // Featured Guests
-    featuredPeople: [
-      {
-        id: "event-1-person-1",
-        name: "Nori mark",
-        role: "Creative Director",
-        image: guestOne,
-      },
-      {
-        id: "event-1-person-2",
-        name: "Daniel Brian",
-        role: "Music Producer",
-        image: guestTwo,
-      },
-       {
-        id: "event-1-person-2",
-        name: "juan Chichi",
-        role: "Tour Host",
-        image: guestThree,
-      },
-    ],
+    featuredPeople: {
+      title: "Featured Speakers",
+      items: [
+          {
+          id: "event-1-person-1",
+          name: "Nori mark",
+          role: "Creative Director",
+          image: guestOne,
+        },
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+      ]
+    },
 
     // Gallery
     gallery: [
@@ -238,22 +241,53 @@ export const mockEvents = [
   ],
 
 
-    featuredPeople: [
-      {
-        id: "event-2-person-1",
-        name: "Featured DJ",
-        role: "DJ",
-        image: "",
-        bio: "Featured DJ for the night.",
-      },
-      {
-        id: "event-2-person-2",
-        name: "Guest Artist",
-        role: "Performing Artist",
-        image: "",
-        bio: "Special performing artist.",
-      },
-    ],
+   featuredPeople: {
+      title: "Featured Speakers",
+      items: [
+          {
+          id: "event-1-person-1",
+          name: "Nori mark",
+          role: "Creative Director",
+          image: guestOne,
+        },
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+         {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+        {
+          id: "event-1-person-1",
+          name: "Nori mark",
+          role: "Creative Director",
+          image: guestOne,
+        },
+         {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+         {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+      ]
+    },
 
     gallery: [eventTwo],
 
@@ -398,23 +432,11 @@ export const mockEvents = [
     ],
 
  
-    featuredPeople: [
-      {
-        id: "event-3-person-1",
-        name: "Featured Boxer",
-        role: "Boxer",
-        image: "",
-        bio: "Featured boxer competing in the exhibition.",
-      },
-      {
-        id: "event-3-person-2",
-        name: "Event Host",
-        role: "Host",
-        image: "",
-        bio: "Host for the boxing exhibition.",
-      },
-    ],
-
+ featuredPeople: {
+      title: "",
+      items: []
+    },
+    
     gallery: [eventThree],
 
     tickets: [
@@ -554,26 +576,59 @@ export const mockEvents = [
       },
     ],
 
-    featuredPeople: [
-      {
-        id: "event-4-person-1",
-        name: "Akin Nori",
-        role: "Creative Director",
-        image: "",
-      },
-      {
-        id: "event-4-person-2",
-        name: "Fight Night Host",
-        role: "Host",
-        image: "",
-      },
-      {
-        id: "event-4-person-2",
-        name: "Fight Night Host",
-        role: "Host",
-        image: "",
-      },
-    ],
+  featuredPeople: {
+      title: "Featured Speakers",
+      items: [
+          {
+          id: "event-1-person-1",
+          name: "Nori mark",
+          role: "Creative Director",
+          image: guestOne,
+        },
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+         {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+        {
+          id: "event-1-person-1",
+          name: "Nori mark",
+          role: "Creative Director",
+          image: guestOne,
+        },
+         {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        }, 
+      ]
+    },
 
     gallery: [eventFour],
 
@@ -721,22 +776,25 @@ export const mockEvents = [
       },
     ],
 
-    featuredPeople: [
-      {
-        id: "event-5-person-1",
-        name: "Featured Player",
-        role: "Football Player",
-        image: "",
-        bio: "Featured participant in the tournament.",
-      },
-      {
-        id: "event-5-person-2",
-        name: "Tournament Host",
-        role: "Host",
-        image: "",
-        bio: "Host for the championship tournament.",
-      },
-    ],
+    featuredPeople: {
+      title: "Featured Speakers",
+      items: [
+        
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+  
+      ]
+    },
 
     gallery: [eventFive],
 
@@ -894,24 +952,36 @@ export const mockEvents = [
       },
     ],
 
-    featuredPeople: [
-      {
-        id: "event-6-person-1",
-        name: "Tech Instructor",
-        role: "Instructor",
-        image: "",
-        bio:
-          "Technology instructor leading participants through the camp.",
-      },
-      {
-        id: "event-6-person-2",
-        name: "Guest Mentor",
-        role: "Mentor",
-        image: "",
-        bio:
-          "Guest mentor helping participants explore technology and creativity.",
-      },
-    ],
+    featuredPeople: {
+      title: "Featured Speakers",
+      items: [
+          {
+          id: "event-1-person-1",
+          name: "Nori mark",
+          role: "Creative Director",
+          image: guestOne,
+        },
+        {
+          id: "event-1-person-2",
+          name: "Daniel Brian",
+          role: "Music Producer",
+          image: guestTwo,
+        },
+        {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+         {
+          id: "event-1-person-2",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+        
+      ]
+    },
 
     gallery: [eventSix],
 
