@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { mockEvents } from "../components/landing-data/mockEvents"
 import { AboutUs } from "../components/EventDetail-Section/AboutUs"
 import { LineUps } from "../components/EventDetail-Section/LineUps";
+import { Featuring } from "../components/EventDetail-Section/Featuring";
 
 function EventDetails() {
 
@@ -17,7 +18,8 @@ function EventDetails() {
     <div>
        <Hero event={event} />
        <AboutUs event={event} />
-       <LineUps event={event} />
+       <LineUps  event={event} /> 
+       <Featuring event={event} />
     </div>
   )
 }

@@ -4,6 +4,9 @@ import eventThree from "../../assets/eventBannerThree.jpg";
 import eventFour from "../../assets/eventBannerFour.jpg";
 import eventFive from "../../assets/eventBannerFive.jpg";
 import eventSix from "../../assets/eventBannerSix.jpg";
+import guestOne from "../../assets/guestOne.png"
+import guestTwo from "../../assets/guestTwo.png"
+import guestThree from "../../assets/guestThree.png"
 
 
 export const mockEvents = [
@@ -66,17 +69,21 @@ export const mockEvents = [
     featuredPeople: [
       {
         id: "event-1-person-1",
-        name: "Featured Artist",
-        role: "Performing Artist",
-        image: "",
-        bio: "Featured performer at the Kpop Show.",
+        name: "Nori mark",
+        role: "Creative Director",
+        image: guestOne,
       },
       {
         id: "event-1-person-2",
-        name: "Special Guest",
-        role: "Special Guest",
-        image: "",
-        bio: "Special guest appearing during the event.",
+        name: "Daniel Brian",
+        role: "Music Producer",
+        image: guestTwo,
+      },
+       {
+        id: "event-1-person-2",
+        name: "juan Chichi",
+        role: "Tour Host",
+        image: guestThree,
       },
     ],
 
@@ -524,7 +531,7 @@ export const mockEvents = [
       {
         id: "event-4-schedule-1",
         title: "Doors Open",
-        startTime: "6:00 PM",
+        time: "6:00 PM",
         description: "Audience arrival and seating.",
       },
       {
@@ -550,17 +557,21 @@ export const mockEvents = [
     featuredPeople: [
       {
         id: "event-4-person-1",
-        name: "Featured Fighter",
-        role: "Boxer",
+        name: "Akin Nori",
+        role: "Creative Director",
         image: "",
-        bio: "Featured fighter at Fight Night.",
       },
       {
         id: "event-4-person-2",
         name: "Fight Night Host",
         role: "Host",
         image: "",
-        bio: "Host for the event.",
+      },
+      {
+        id: "event-4-person-2",
+        name: "Fight Night Host",
+        role: "Host",
+        image: "",
       },
     ],
 
