@@ -7,6 +7,14 @@ import eventSix from "../../assets/eventBannerSix.jpg";
 import guestOne from "../../assets/guestOne.png"
 import guestTwo from "../../assets/guestTwo.png"
 import guestThree from "../../assets/guestThree.png"
+import galleryOne from "../../assets/galleryOne.jpg"
+import galleryTwo from "../../assets/galleryTwo.jpg"
+import galleryThree from "../../assets/galleryThree.jpg"
+import galleryFour from "../../assets/galleryFour.jpg"
+import galleryFive from "../../assets/galleryFive.jpg"
+import gallerySix from "../../assets/gallerySix.jpg"
+import gallerySeven from "../../assets/gallerySeven.jpg"
+
 
 
 export const mockEvents = [
@@ -44,32 +52,34 @@ export const mockEvents = [
 
     // About
     about: {
-      title: "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
+      title:
+        "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
       content:
         "SBS MTV The Kpop Show brings fans together for an exciting live music experience filled with performances, entertainment and unforgettable moments.",
     },
 
     // Schedule
     schedule: [
-    {
-      id: "event-1-schedule-1",
-      title: "Doors Open",
-      time: "4:00 PM",
-      description: "Guests arrive and get settled before the show begins.",
-    },
-    {
-      id: "event-1-schedule-2",
-      title: "Main Kpop Show",
-      time: "6:00 PM",
-      description: "The main live music experience featuring performances and entertainment.",
-    },
-  ],
+      {
+        id: "event-1-schedule-1",
+        title: "Doors Open",
+        time: "4:00 PM",
+        description: "Guests arrive and get settled before the show begins.",
+      },
+      {
+        id: "event-1-schedule-2",
+        title: "Main Kpop Show",
+        time: "6:00 PM",
+        description:
+          "The main live music experience featuring performances and entertainment.",
+      },
+    ],
 
     // Featured Guests
     featuredPeople: {
       title: "Featured Speakers",
       items: [
-          {
+        {
           id: "event-1-person-1",
           name: "Nori mark",
           role: "Creative Director",
@@ -82,18 +92,20 @@ export const mockEvents = [
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
+          id: "event-1-person-3",
           name: "juan Chichi",
           role: "Tour Host",
           image: guestThree,
         },
-      ]
+      ],
     },
 
     // Gallery
     gallery: [
-      eventOne,
-      // Add additional event photos here
+        { id: "event-1-photo-1", url: galleryOne },
+        { id: "event-1-photo-2", url: galleryTwo },
+        { id: "event-1-photo-3", url: galleryThree },
+        { id: "event-1-photo-4", url: galleryFour },
     ],
 
     // Tickets
@@ -103,48 +115,47 @@ export const mockEvents = [
         name: "Regular",
         price: 10000,
         currency: "NGN",
-
-        shortDescription: "General admission to the Kpop Show.",
-
-        description:
-          "Enjoy general admission access to SBS MTV The Kpop Show and experience the live performances and entertainment.",
-
         benefits: [
-          "General event access",
-          "Access to the main show",
-          "Access to general viewing areas",
+          "General admission",
+          "Main floor access",
+          "Digital event keepsake",
         ],
-
-        restrictions: [],
-
         availability: {
           total: 1000,
           remaining: 1000,
+          showRemaining: false,
         },
       },
-
       {
         id: "event-1-ticket-2",
         name: "VIP",
         price: 25000,
         currency: "NGN",
-
-        shortDescription: "Premium access to the Kpop Show.",
-
-        description:
-          "Enjoy premium access to the event with an enhanced viewing experience and priority entry.",
-
         benefits: [
-          "VIP event access",
           "Priority entry",
-          "Premium viewing area",
+          "Premium floor section",
+          "Exclusive tour merchandise",
         ],
-
-        restrictions: [],
-
         availability: {
           total: 200,
           remaining: 200,
+          showRemaining: false,
+        },
+      },
+      {
+        id: "event-1-ticket-3",
+        name: "VVIP",
+        price: 60000,
+        currency: "NGN",
+        benefits: [
+          "Front-row reserved seat",
+          "Pre-show soundcheck",
+          "Artist photo opportunity",
+        ],
+        availability: {
+          total: 50,
+          remaining: 50,
+          showRemaining: false,
         },
       },
     ],
@@ -213,83 +224,90 @@ export const mockEvents = [
     },
 
     about: {
-      title: "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
+      title:
+        "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
       content:
         "Vibes City Show is a late-night entertainment experience bringing music lovers together for a night of performances, DJs, socializing and good energy.",
     },
-    
 
-      schedule: [
-    {
-      id: "event-2-schedule-1",
-      title: "Doors Open",
-      time: "4:00 PM",
-      description: "Guests arrive and get settled before the show begins.",
-    },
-    {
-      id: "event-2-schedule-2",
-      title: "Main Kpop Show",
-      time: "6:00 PM",
-      description: "The main live music experience featuring performances and entertainment.",
-    },
-    {
-      id: "event-2-schedule-2",
-      title: "DJ Session",
-      time: "8:00 PM",
-      description: "Live DJ performances and entertainment.",
-    },
-  ],
+    schedule: [
+      {
+        id: "event-2-schedule-1",
+        title: "Doors Open",
+        time: "4:00 PM",
+        description: "Guests arrive and get settled before the show begins.",
+      },
+      {
+        id: "event-2-schedule-2",
+        title: "Main Kpop Show",
+        time: "6:00 PM",
+        description:
+          "The main live music experience featuring performances and entertainment.",
+      },
+      {
+        id: "event-2-schedule-3",
+        title: "DJ Session",
+        time: "8:00 PM",
+        description: "Live DJ performances and entertainment.",
+      },
+    ],
 
-
-   featuredPeople: {
+    featuredPeople: {
       title: "Featured Speakers",
       items: [
-          {
-          id: "event-1-person-1",
+        {
+          id: "event-2-person-1",
           name: "Nori mark",
           role: "Creative Director",
           image: guestOne,
         },
         {
-          id: "event-1-person-2",
+          id: "event-2-person-2",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
-          name: "juan Chichi",
-          role: "Tour Host",
-          image: guestThree,
-        },
-         {
-          id: "event-1-person-2",
+          id: "event-2-person-3",
           name: "juan Chichi",
           role: "Tour Host",
           image: guestThree,
         },
         {
-          id: "event-1-person-1",
+          id: "event-2-person-4",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+        {
+          id: "event-2-person-5",
           name: "Nori mark",
           role: "Creative Director",
           image: guestOne,
         },
-         {
-          id: "event-1-person-2",
+        {
+          id: "event-2-person-6",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
-         {
-          id: "event-1-person-2",
+        {
+          id: "event-2-person-7",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
-      ]
+      ],
     },
-
-    gallery: [eventTwo],
+  
+   gallery: [
+        { id: "event-2-photo-1", url: galleryOne },
+        { id: "event-2-photo-2", url: galleryTwo },
+        { id: "event-2-photo-3", url: galleryThree },
+        { id: "event-2-photo-4", url: galleryFour },
+        { id: "event-2-photo-5", url: galleryFive },
+        { id: "event-2-photo-6", url: gallerySix },
+    ],
 
     tickets: [
       {
@@ -297,47 +315,47 @@ export const mockEvents = [
         name: "Regular",
         price: 5000,
         currency: "NGN",
-
-        shortDescription: "General access to Vibes City Show.",
-
-        description:
-          "Enjoy a full night of music, performances and entertainment.",
-
         benefits: [
           "General event access",
-          "Access to performances",
+          "Access to all performances",
+          "Open dance floor",
         ],
-
-        restrictions: ["18+"],
-
         availability: {
           total: 1000,
           remaining: 1000,
+          showRemaining: false,
         },
       },
-
       {
         id: "event-2-ticket-2",
         name: "VIP",
         price: 15000,
         currency: "NGN",
-
-        shortDescription: "Premium access and viewing.",
-
-        description:
-          "Enjoy a premium experience with priority access and an enhanced viewing area.",
-
         benefits: [
-          "VIP access",
           "Priority entry",
-          "Premium viewing area",
+          "Reserved lounge area",
+          "Complimentary welcome drink",
         ],
-
-        restrictions: ["18+"],
-
         availability: {
           total: 150,
           remaining: 150,
+          showRemaining: false,
+        },
+      },
+      {
+        id: "event-2-ticket-3",
+        name: "VVIP",
+        price: 30000,
+        currency: "NGN",
+        benefits: [
+          "Private table service",
+          "Meet the DJ",
+          "Express bar access",
+        ],
+        availability: {
+          total: 50,
+          remaining: 50,
+          showRemaining: false,
         },
       },
     ],
@@ -398,18 +416,18 @@ export const mockEvents = [
     },
 
     about: {
-      title: "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
+      title:
+        "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
       content:
         "Street Boxing Exhibition brings boxing fans together for an exciting evening of exhibition bouts, athletic performances and live entertainment.",
     },
-
 
     schedule: [
       {
         id: "event-3-schedule-1",
         title: "Doors Open",
         time: "4:00 PM",
-        description: "Guests arrival and get seating .",
+        description: "Guests arrival and get seating.",
       },
       {
         id: "event-3-schedule-2",
@@ -423,7 +441,7 @@ export const mockEvents = [
         time: "7:00 PM",
         description: "Main event.",
       },
-       {
+      {
         id: "event-3-schedule-4",
         title: "Closing",
         time: "10:00 PM",
@@ -431,13 +449,20 @@ export const mockEvents = [
       },
     ],
 
- 
- featuredPeople: {
+    featuredPeople: {
       title: "",
-      items: []
+      items: [],
     },
-    
-    gallery: [eventThree],
+
+    gallery: [
+        { id: "event-3-photo-1", url: galleryOne },
+        { id: "event-3-photo-2", url: galleryTwo },
+        { id: "event-3-photo-3", url: galleryThree },
+        { id: "event-3-photo-4", url: galleryFour },
+        { id: "event-3-photo-5", url: galleryFive },
+        { id: "event-3-photo-6", url: gallerySix },
+        { id: "event-3-photo-7", url: gallerySeven },
+    ],
 
     tickets: [
       {
@@ -445,45 +470,47 @@ export const mockEvents = [
         name: "General Admission",
         price: 7500,
         currency: "NGN",
-
-        shortDescription: "General access to the boxing exhibition.",
-
-        description:
-          "Get access to the live boxing exhibition and experience the action from the general viewing area.",
-
         benefits: [
           "General event access",
+          "Standing viewing area",
           "Access to all scheduled bouts",
         ],
-
-        restrictions: [],
         availability: {
           total: 800,
           remaining: 800,
+          showRemaining: false,
         },
       },
-
       {
         id: "event-3-ticket-2",
         name: "VIP",
         price: 20000,
         currency: "NGN",
-
-        shortDescription: "Premium ringside experience.",
-
-        description:
-          "Enjoy premium access with a closer view of the action and priority entry.",
-
         benefits: [
-          "VIP access",
-          "Premium seating",
           "Priority entry",
+          "Premium seating",
+          "Closer view of the ring",
         ],
-
-        restrictions: [],
         availability: {
           total: 100,
           remaining: 100,
+          showRemaining: false,
+        },
+      },
+      {
+        id: "event-3-ticket-3",
+        name: "VVIP",
+        price: 60000,
+        currency: "NGN",
+        benefits: [
+          "Ringside seat",
+          "Meet the fighters",
+          "Exclusive event merchandise",
+        ],
+        availability: {
+          total: 40,
+          remaining: 40,
+          showRemaining: false,
         },
       },
     ],
@@ -544,7 +571,8 @@ export const mockEvents = [
     },
 
     about: {
-      title: "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
+      title:
+        "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
       content:
         "Unfathomable Fight Night delivers an exciting evening of live competition, athletic performances and entertainment for fight fans.",
     },
@@ -576,61 +604,66 @@ export const mockEvents = [
       },
     ],
 
-  featuredPeople: {
+    featuredPeople: {
       title: "Featured Speakers",
       items: [
-          {
-          id: "event-1-person-1",
+        {
+          id: "event-4-person-1",
           name: "Nori mark",
           role: "Creative Director",
           image: guestOne,
         },
         {
-          id: "event-1-person-2",
+          id: "event-4-person-2",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
-          name: "juan Chichi",
-          role: "Tour Host",
-          image: guestThree,
-        },
-         {
-          id: "event-1-person-2",
+          id: "event-4-person-3",
           name: "juan Chichi",
           role: "Tour Host",
           image: guestThree,
         },
         {
-          id: "event-1-person-1",
+          id: "event-4-person-4",
+          name: "juan Chichi",
+          role: "Tour Host",
+          image: guestThree,
+        },
+        {
+          id: "event-4-person-5",
           name: "Nori mark",
           role: "Creative Director",
           image: guestOne,
         },
-         {
-          id: "event-1-person-2",
+        {
+          id: "event-4-person-6",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
+          id: "event-4-person-7",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
+          id: "event-4-person-8",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
-        }, 
-      ]
+        },
+      ],
     },
 
-    gallery: [eventFour],
+   
+    gallery: [
+        { id: "event-4-photo-1", url: galleryOne },
+        { id: "event-4-photo-2", url: galleryTwo },
+    ],
+
 
     tickets: [
       {
@@ -638,45 +671,31 @@ export const mockEvents = [
         name: "Regular",
         price: 7500,
         currency: "NGN",
-
-        shortDescription: "General access to Fight Night.",
-
-        description:
-          "Experience the full Fight Night event with access to the general viewing areas.",
-
         benefits: [
           "General event access",
+          "Standing viewing area",
           "Access to all scheduled fights",
         ],
-
-        restrictions: [],
         availability: {
           total: 800,
           remaining: 800,
+          showRemaining: false,
         },
       },
-
       {
         id: "event-4-ticket-2",
         name: "VIP",
         price: 20000,
         currency: "NGN",
-
-        shortDescription: "Premium Fight Night experience.",
-
-        description:
-          "Enjoy premium seating, priority entry and a closer view of the action.",
-
         benefits: [
-          "VIP access",
-          "Premium seating",
           "Priority entry",
+          "Premium seating",
+          "Closer view of the ring",
         ],
-
-        restrictions: [],
         availability: {
           total: 150,
-          remaining: 150,
+          remaining: 12,
+          showRemaining: true,
         },
       },
     ],
@@ -696,8 +715,7 @@ export const mockEvents = [
       },
       {
         question: "What does VIP include?",
-        answer:
-          "VIP includes premium seating and priority entry.",
+        answer: "VIP includes premium seating and priority entry.",
       },
     ],
 
@@ -738,7 +756,8 @@ export const mockEvents = [
     },
 
     about: {
-      title: "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
+      title:
+        "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together.",
       content:
         "Championship Tournament brings football fans together for a full day of competitive matches, entertainment and community.",
     },
@@ -779,24 +798,22 @@ export const mockEvents = [
     featuredPeople: {
       title: "Featured Speakers",
       items: [
-        
         {
-          id: "event-1-person-2",
+          id: "event-5-person-1",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
+          id: "event-5-person-2",
           name: "juan Chichi",
           role: "Tour Host",
           image: guestThree,
         },
-  
-      ]
+      ],
     },
 
-    gallery: [eventFive],
+    gallery: [],
 
     tickets: [
       {
@@ -804,50 +821,47 @@ export const mockEvents = [
         name: "Regular",
         price: 5000,
         currency: "NGN",
-
-        shortDescription:
-          "General admission to the championship tournament.",
-
-        description:
-          "Enjoy access to the tournament and experience the matches from the general viewing areas.",
-
         benefits: [
           "General event access",
           "Access to tournament matches",
           "Access to closing ceremony",
         ],
-
-        restrictions: [],
-
         availability: {
           total: 1000,
           remaining: 1000,
+          showRemaining: false,
         },
       },
-
       {
         id: "event-5-ticket-2",
         name: "VIP",
         price: 15000,
         currency: "NGN",
-
-        shortDescription:
-          "Premium access to the championship tournament.",
-
-        description:
-          "Enjoy premium seating, priority entry and an enhanced tournament experience.",
-
         benefits: [
-          "VIP access",
-          "Premium viewing area",
           "Priority entry",
+          "Premium viewing area",
+          "Reserved seating",
         ],
-
-        restrictions: [],
-
         availability: {
           total: 150,
           remaining: 150,
+          showRemaining: false,
+        },
+      },
+      {
+        id: "event-5-ticket-3",
+        name: "VVIP",
+        price: 30000,
+        currency: "NGN",
+        benefits: [
+          "Front-row seat",
+          "Meet the players",
+          "Access to the awards ceremony",
+        ],
+        availability: {
+          total: 50,
+          remaining: 0,
+          showRemaining: false,
         },
       },
     ],
@@ -867,8 +881,7 @@ export const mockEvents = [
       },
       {
         question: "What does VIP include?",
-        answer:
-          "VIP includes premium viewing and priority entry.",
+        answer: "VIP includes premium viewing and priority entry.",
       },
     ],
 
@@ -909,7 +922,8 @@ export const mockEvents = [
     },
 
     about: {
-      title: "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together. Come celebrate.",
+      title:
+        "An unforgettable experience filled with great moments, exciting energy, and everything that brings people together. Come celebrate.",
       content:
         "Kids Tech Holiday Camp is an interactive technology experience designed to introduce young participants to technology, creativity and practical digital skills in a fun environment.",
     },
@@ -926,8 +940,7 @@ export const mockEvents = [
         id: "event-6-schedule-2",
         title: "Technology Workshop",
         time: "9:00 AM",
-        description:
-          "An interactive technology learning session.",
+        description: "An interactive technology learning session.",
       },
       {
         id: "event-6-schedule-3",
@@ -947,43 +960,47 @@ export const mockEvents = [
         id: "event-6-schedule-5",
         title: "Closing Session",
         time: "3:00 PM",
-        description:
-          "Final activities and closing of the camp.",
+        description: "Final activities and closing of the camp.",
       },
     ],
 
     featuredPeople: {
       title: "Featured Speakers",
       items: [
-          {
-          id: "event-1-person-1",
+        {
+          id: "event-6-person-1",
           name: "Nori mark",
           role: "Creative Director",
           image: guestOne,
         },
         {
-          id: "event-1-person-2",
+          id: "event-6-person-2",
           name: "Daniel Brian",
           role: "Music Producer",
           image: guestTwo,
         },
         {
-          id: "event-1-person-2",
+          id: "event-6-person-3",
           name: "juan Chichi",
           role: "Tour Host",
           image: guestThree,
         },
-         {
-          id: "event-1-person-2",
+        {
+          id: "event-6-person-4",
           name: "juan Chichi",
           role: "Tour Host",
           image: guestThree,
         },
-        
-      ]
+      ],
     },
 
-    gallery: [eventSix],
+    
+    gallery: [
+        { id: "event-6-photo-1", url: galleryOne },
+        { id: "event-6-photo-2", url: galleryTwo },
+        { id: "event-6-photo-3", url: galleryThree },
+    ],
+
 
     tickets: [
       {
@@ -991,57 +1008,32 @@ export const mockEvents = [
         name: "Standard",
         price: 10000,
         currency: "NGN",
-
-        shortDescription:
-          "Full access to the technology camp.",
-
-        description:
-          "Provides access to the Kids Tech Holiday Camp, including scheduled workshops, activities and the project showcase.",
-
         benefits: [
           "Full camp access",
           "Technology workshops",
           "Hands-on activities",
           "Project showcase",
         ],
-
-        restrictions: [
-          "Parent or guardian information may be required.",
-        ],
-
         availability: {
           total: 100,
           remaining: 100,
+          showRemaining: false,
         },
       },
-
       {
         id: "event-6-ticket-2",
         name: "Premium",
         price: 20000,
         currency: "NGN",
-
-        shortDescription:
-          "Enhanced access to the technology camp.",
-
-        description:
-          "Includes full camp access with additional premium learning materials and benefits.",
-
         benefits: [
-          "Full camp access",
-          "All workshops",
-          "Hands-on activities",
-          "Premium materials",
-          "Project showcase",
+          "Everything in Standard",
+          "Premium learning materials",
+          "Take-home project kit",
         ],
-
-        restrictions: [
-          "Parent or guardian information may be required.",
-        ],
-
         availability: {
           total: 50,
           remaining: 50,
+          showRemaining: false,
         },
       },
     ],
@@ -1082,3 +1074,4 @@ export const mockEvents = [
     },
   },
 ];
+

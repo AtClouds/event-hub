@@ -1,12 +1,14 @@
+import { TicketCards } from "../EventDetails-UI/TicketCards"
 
 
-export function TicketTiers() {
+export function TicketTiers({event}) {
 
 
     return(
         <div className="bg-[#EFE1FF] flex justify-center items-center">
+            
             {/* Outer div */}
-            <div className="py-15 md:px-10 px-5 flex flex-col  lg:w-[90%] w-full"
+            <div className="py-15 md:px-10 px-5 flex flex-col  lg:w-[90%] w-full">
                 {/* headings */}
                 <div className="mb-6 text-center">
                 <p className="lg:text-[16px] text-[13px]  text-brand-secondary font-normal ">
@@ -18,6 +20,11 @@ export function TicketTiers() {
                 </div>
 
                 {/* card layout */}
+                <div className="flex flex-wrap justify-center gap-10">
+                {event.tickets.map((ticket) => (
+                    <TicketCards key={ticket.id} ticket={ticket} className="w-full sm:w-[300px]" />
+                ))}
+                </div>
             </div>
         </div>
     );
