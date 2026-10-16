@@ -43,11 +43,16 @@ export const mockEvents = [
 
     // Venue
     venue: {
-      name: "The Warfield",
-      address: "982 Market Street, San Francisco",
-      city: "Uyo",
-      country: "Nigeria",
-      directionsUrl: "",
+    name: "The Warfield",
+    address: "982 Market Street, San Francisco",
+    city: "Uyo",
+    country: "Nigeria",
+
+    latitude: 4.9990,
+    longitude: 7.9405,
+
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=4.9990,7.9405"
     },
 
     // About
@@ -159,39 +164,6 @@ export const mockEvents = [
         },
       },
     ],
-
-    // Organizer
-    organizer: {
-      id: "organizer-1",
-      name: "SBS Events",
-      logo: "",
-      description:
-        "An entertainment team creating memorable live music experiences.",
-    },
-
-    // FAQs
-    faqs: [
-      {
-        question: "What time should I arrive?",
-        answer: "Doors open at 4:00 PM.",
-      },
-      {
-        question: "What does my ticket include?",
-        answer:
-          "Your ticket provides access according to the ticket type purchased.",
-      },
-      {
-        question: "Can I get a refund?",
-        answer: "Tickets are subject to the event refund policy.",
-      },
-    ],
-
-    // Policies
-    policies: {
-      refundPolicy: "Tickets are subject to the event refund policy.",
-      ageRestriction: "All ages",
-      entryRequirements: ["Valid ticket required for entry."],
-    },
   },
 
   // =====================================================
@@ -216,11 +188,16 @@ export const mockEvents = [
     endTime: "3:00 AM",
 
     venue: {
-      name: "The Warfield",
-      address: "982 Market Street, San Francisco",
-      city: "Port Harcourt",
-      country: "Nigeria",
-      directionsUrl: "",
+    name: "The Warfield",
+    address: "982 Market Street, San Francisco",
+    city: "Uyo",
+    country: "Nigeria",
+
+    latitude: 4.9990,
+    longitude: 7.9405,
+
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=4.9990,7.9405"
     },
 
     about: {
@@ -359,31 +336,6 @@ export const mockEvents = [
         },
       },
     ],
-
-    organizer: {
-      id: "organizer-2",
-      name: "Vibes City",
-      logo: "",
-      description:
-        "A team focused on creating memorable entertainment experiences.",
-    },
-
-    faqs: [
-      {
-        question: "What time does the event start?",
-        answer: "Doors open at 9:00 PM.",
-      },
-      {
-        question: "Is the event 18+?",
-        answer: "Yes, this event is intended for adults.",
-      },
-    ],
-
-    policies: {
-      refundPolicy: "Tickets are subject to the event refund policy.",
-      ageRestriction: "18+",
-      entryRequirements: ["Valid ticket required."],
-    },
   },
 
   // =====================================================
@@ -408,11 +360,16 @@ export const mockEvents = [
     endTime: "10:00 PM",
 
     venue: {
-      name: "The Warfield",
-      address: "982 Market Street, San Francisco",
-      city: "Lagos",
-      country: "Nigeria",
-      directionsUrl: "",
+    name: "The Warfield",
+    address: "982 Market Street, San Francisco",
+    city: "Uyo",
+    country: "Nigeria",
+
+    latitude: 4.9990,
+    longitude: 7.9405,
+
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=4.9990,7.9405"
     },
 
     about: {
@@ -514,31 +471,6 @@ export const mockEvents = [
         },
       },
     ],
-
-    organizer: {
-      id: "organizer-3",
-      name: "Street Boxing Events",
-      logo: "",
-      description:
-        "Organizers creating exciting live sporting experiences.",
-    },
-
-    faqs: [
-      {
-        question: "When do doors open?",
-        answer: "Doors open at 5:00 PM.",
-      },
-      {
-        question: "Are children allowed?",
-        answer: "Entry requirements depend on the event policy.",
-      },
-    ],
-
-    policies: {
-      refundPolicy: "Tickets are subject to the event refund policy.",
-      ageRestriction: "All ages",
-      entryRequirements: ["Valid ticket required."],
-    },
   },
 
   // =====================================================
@@ -563,11 +495,16 @@ export const mockEvents = [
     endTime: "11:00 PM",
 
     venue: {
-      name: "The Warfield",
-      address: "982 Market Street, San Francisco",
-      city: "Uyo",
-      country: "Nigeria",
-      directionsUrl: "",
+    name: "The Warfield",
+    address: "982 Market Street, San Francisco",
+    city: "Uyo",
+    country: "Nigeria",
+
+    latitude: 4.9990,
+    longitude: 7.9405,
+
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=4.9990,7.9405"
     },
 
     about: {
@@ -699,31 +636,6 @@ export const mockEvents = [
         },
       },
     ],
-
-    organizer: {
-      id: "organizer-4",
-      name: "Unfathomable Events",
-      logo: "",
-      description:
-        "Organizers creating live sporting and entertainment experiences.",
-    },
-
-    faqs: [
-      {
-        question: "What time does the event begin?",
-        answer: "Doors open at 6:00 PM.",
-      },
-      {
-        question: "What does VIP include?",
-        answer: "VIP includes premium seating and priority entry.",
-      },
-    ],
-
-    policies: {
-      refundPolicy: "Tickets are subject to the event refund policy.",
-      ageRestriction: "All ages",
-      entryRequirements: ["Valid ticket required."],
-    },
   },
 
   // =====================================================
@@ -748,11 +660,16 @@ export const mockEvents = [
     endTime: "6:00 PM",
 
     venue: {
-      name: "The Warfield",
-      address: "982 Market Street, San Francisco",
-      city: "Calabar",
-      country: "Nigeria",
-      directionsUrl: "",
+    name: "The Warfield",
+    address: "982 Market Street, San Francisco",
+    city: "Uyo",
+    country: "Nigeria",
+
+    latitude: 4.9990,
+    longitude: 7.9405,
+
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=4.9990,7.9405"
     },
 
     about: {
@@ -865,31 +782,6 @@ export const mockEvents = [
         },
       },
     ],
-
-    organizer: {
-      id: "organizer-5",
-      name: "Championship Events",
-      logo: "",
-      description:
-        "Organizers creating competitive sporting experiences.",
-    },
-
-    faqs: [
-      {
-        question: "When does the tournament start?",
-        answer: "Gates open at 10:00 AM.",
-      },
-      {
-        question: "What does VIP include?",
-        answer: "VIP includes premium viewing and priority entry.",
-      },
-    ],
-
-    policies: {
-      refundPolicy: "Tickets are subject to the event refund policy.",
-      ageRestriction: "All ages",
-      entryRequirements: ["Valid ticket required."],
-    },
   },
 
   // =====================================================
@@ -914,11 +806,16 @@ export const mockEvents = [
     endTime: "4:00 PM",
 
     venue: {
-      name: "The Warfield",
-      address: "982 Market Street, San Francisco",
-      city: "Uyo",
-      country: "Nigeria",
-      directionsUrl: "",
+    name: "The Warfield",
+    address: "982 Market Street, San Francisco",
+    city: "Uyo",
+    country: "Nigeria",
+
+    latitude: 4.9990,
+    longitude: 7.9405,
+
+    directionsUrl:
+      "https://www.google.com/maps/dir/?api=1&destination=4.9990,7.9405"
     },
 
     about: {
@@ -1037,41 +934,6 @@ export const mockEvents = [
         },
       },
     ],
-
-    organizer: {
-      id: "organizer-6",
-      name: "Kids Tech Events",
-      logo: "",
-      description:
-        "An organization creating fun and educational technology experiences for young learners.",
-    },
-
-    faqs: [
-      {
-        question: "What time should participants arrive?",
-        answer: "Registration begins at 8:00 AM.",
-      },
-      {
-        question: "What should participants bring?",
-        answer:
-          "Participants should bring any required personal learning materials specified by the organizers.",
-      },
-      {
-        question: "Who can attend?",
-        answer:
-          "The camp is designed for children and young learners.",
-      },
-    ],
-
-    policies: {
-      refundPolicy:
-        "Tickets are subject to the event refund policy.",
-      ageRestriction: "Children and young learners",
-      entryRequirements: [
-        "Valid ticket required.",
-        "Parent or guardian information may be required.",
-      ],
-    },
   },
 ];
 

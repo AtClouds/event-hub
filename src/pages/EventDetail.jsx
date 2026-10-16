@@ -5,6 +5,9 @@ import { AboutUs } from "../components/EventDetail-Section/AboutUs"
 import { LineUps } from "../components/EventDetail-Section/LineUps";
 import { Featuring } from "../components/EventDetail-Section/Featuring";
 import { TicketTiers } from "../components/EventDetail-Section/TicketTiers";
+import { Gallery } from "../components/EventDetail-Section/Gallery";
+import { Venue } from "../components/EventDetail-Section/Venue"
+import { Footer } from "../components/landing-layout/Footer"
 
 function EventDetails() {
 
@@ -22,6 +25,9 @@ function EventDetails() {
        <LineUps  event={event} /> 
        {event.featuredPeople?.items?.length > 0 && <Featuring event={event} />}
        <TicketTiers event={event} />
+       {event.gallery?.length > 0 && <Gallery event={event} />}
+       <Venue event={event} />
+       <Footer event={event} />
     </div>
   )
 }
