@@ -662,7 +662,7 @@ export const mockEvents = [
     venue: {
     name: "The Warfield",
     address: "982 Market Street, San Francisco",
-    city: "Uyo",
+    city: "Lagos",
     country: "Nigeria",
 
     latitude: 4.9990,

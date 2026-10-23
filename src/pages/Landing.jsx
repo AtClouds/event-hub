@@ -18,13 +18,15 @@ function Landing() {
     const matchesSearch = event.title
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
-    const matchesPlace =
-      place === "" || event.place.toLowerCase().includes(place.toLowerCase());
+    const matchesPlace  =
+     place === "" || event.venue.city
+     .toLowerCase()
+     .includes(place.toLowerCase());
     const matchesDate =
       date === "" ||
       event.date.split(" ")[1].replace(",", "") ===
         months.find((m) => m.value === date)?.label;
-
+ 
     return matchesSearch && matchesPlace && matchesDate;
   });
 

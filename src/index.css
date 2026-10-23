@@ -6,6 +6,8 @@
 @theme {
   --color-brand-primary: #141572;
   --color-brand-secondary: #f5167e;
+  --color-brand-light-bg: #F7F7FC;
+  --color-brand-light-text: #707087;
   --font-sans: "Manrope", sans-serif;
 }
 
