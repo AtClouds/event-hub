@@ -2,7 +2,7 @@ import logo from "../../../assets/logo-1.png"
 import { FiLock } from "react-icons/fi";
 import { steps } from "../../landing-data/checkoutStepper";
 import { useLocation } from "react-router";
-import { Link } from "react-router";
+
 
 
 

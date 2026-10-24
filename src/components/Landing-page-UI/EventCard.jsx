@@ -376,7 +376,7 @@ export function EventCard({ event }) {
               px-2 py-2    
               text-[18px]
               font-medium
-              text-balck
+              text-black
               transition-all
               duration-300
               ease-out

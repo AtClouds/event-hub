@@ -80,20 +80,20 @@ function TicketStep () {
                         </div>
 
                         {/* Benefits of ticket */}
-                        <div className="border-t border-[#707087]/20 py-4 mt-6">
+                        <div className="border-t border-brand-light-text/20 py-4 mt-6">
                             {/* Ticket quantity */}
                             <div className="flex justify-between items-center">
                                 <div>
                                     <h1 className="text-[18px] text-brand-primary font-bold">Quantity</h1>
-                                    <p className="text-[12px] text-[#707087]">{event.type}</p>
+                                    <p className="text-[12px] text-brand-light-text">{event.type}</p>
                                 </div>
 
                                 {/* Add and Subtract */}
-                                <div className="flex gap-4 py-2 px-4 rounded-2xl border border-[#707087]/30">
+                                <div className="flex gap-4 py-2 px-4 rounded-2xl border border-brand-light-text/30">
                                     <p onClick={() => {
                                         setOrder({ ...order, qty: order.qty - 1 })
                                     }}
-                                    className="font-bold text-[20px] text-[#707087] cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 ">-</p>
+                                    className="font-bold text-[20px] text-brand-light-text cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 ">-</p>
                                     <p className="text-[20px] text-brand-primary font-bold ">{order.qty}</p>
                                     <div>
                                     <p onClick={() => {
@@ -107,7 +107,7 @@ function TicketStep () {
 
                     {/* Subtotal */}
                     <div className="flex justify-between items-center mt-2">
-                        <p className="text-[14px] text-[#707087] font-light">Ticket subtotal</p>
+                        <p className="text-[14px] text-brand-light-text font-light">Ticket subtotal</p>
                         <p className="text-[16px] text-brand-primary font-semibold">{formatPrice(subtotal, ticket.currency)}</p>
                     </div>
 
@@ -129,7 +129,7 @@ function TicketStep () {
 
                     {/* Comment */}
                     <div className="mt-5 flex justify-center items-center">
-                        <p className="text-[13px] text-[#707087] font-light">Your order stays with you at every step</p>
+                        <p className="text-[13px] text-brand-light-text font-light">Your order stays with you at every step</p>
                     </div>
                     </div>
 

@@ -1,27 +1,43 @@
-import { useOutletContext } from "react-router";
-import { Link } from "react-router";
+import { useOutletContext, useNavigate, Link } from "react-router";
 import { FiArrowLeft } from "react-icons/fi";
-import { HiOutlineTicket } from "react-icons/hi2"; 
+import { LuLock } from "react-icons/lu";
 import { OderSummary } from "../ticket-check-out-UI/OrderSummary"; 
+import { useState } from "react";
 
 
 function DetailsStep () {
 
-       const { event, ticket, order, setOrder, subtotal } = useOutletContext();
+       const { event, ticket, order,  field  } = useOutletContext();
+
+       const navigate = useNavigate();
    
-         const formatPrice = (amount, currency) =>
-           new Intl.NumberFormat("en-NG", {
-               style: "currency",
-               currency,
-               maximumFractionDigits: 0,
-         }).format(amount);   
-   
-        
-   
-      
-   
+       const [errors, setErrors] = useState({});
+
+       const  handleContinue = () => {
+            const newErrors = {}
+
+            if (!order.fullName?.trim()) {
+                newErrors.fullName = "Full name is required";
+            }
+
+            if (!order.email?.trim()) {
+                newErrors.email = "Email is required";
+            }
+
+            if (!order.tel?.trim()) {
+                newErrors.tel = "Phone number is required";
+            }
+
+            setErrors(newErrors)
+
+            if (Object.keys(newErrors).length === 0) {
+                navigate("../review");
+            }
+       }
+
+
        return(
-           <div className="bg-[#F7F7FC] flex justify-center  min-h-screen">
+           <div className="bg-brand-light-bg flex justify-center  min-h-screen">
    
            {/* Outer div */}   
            <div className="w-full px-4 md:w-[80%] mt-6">
@@ -64,54 +80,51 @@ function DetailsStep () {
                                </div>
                            </div>
    
-                           {/* Benefits of ticket */}
-                           <div className="mt-5 bg-[#F0EBFC] rounded-2xl p-4 ">
-                               {ticket.benefits.map((benefit, index) => (
-                                   <li
-                                   key={index}
-                                   className="flex items-center gap-3 "
-                                   >
-                                   <span className="text-brand-secondary transition-colors duration-300  group-hover:text-white text-[14px] pl-2">✓</span>
-                                   <span className="text-brand-primary transition-colors duration-300 group-hover:text-white text-[14px]">{benefit}</span>
-                                   </li>
-                               ))}
+                           {/* ticket field */}
+                           <div className="mt-6">
+                                {/* Name field */}
+                                <div>
+                                    <h2 className="text-[16px] font-semibold text-brand-primary">Full Name</h2>
+                                    <input
+                                    placeholder="example, Ada Okafor"
+                                    type="text"
+                                    className={`w-full rounded-xl  bg-white px-4 py-3 text-brand-light-text outline-none focus:outline-none focus:ring-0 mt-3 ${errors.fullName ? "border-2 border-red-600" :"border border-brand-light-text/30"}`}
+                                    {...field('fullName')}
+                                    />
+                                    {errors.fullName && <p className="text-red-600 text-[12px] font-medium mt-2">{errors.fullName}</p>}
+                                </div>
+
+                                {/* field two */}
+                                <div className="mt-5">
+                                    <h2 className="text-[16px] font-semibold text-brand-primary">Email</h2>
+                                    <input
+                                    placeholder="ada.okafor@example.com"
+                                    type="email"
+                                    className={`w-full rounded-xl  bg-white px-4 py-3 text-brand-light-text outline-none focus:outline-none focus:ring-0 mt-3 ${errors.email ? "border-2 border-red-600" :"border border-brand-light-text/30"}`}
+                                    {...field('email')}
+                                    />
+                                     {errors.email && <p className="text-red-600 text-[12px] font-medium mt-2">{errors.email}</p>}
+                                    <p className="text-[12px] text-brand-light-text mt-2">Your ticket and receipt will be sent here.</p>
+                                </div>
+
+                                {/* field two */}
+                                <div className="mt-5">
+                                    <h2 className="text-[16px] font-semibold text-brand-primary">Phone Number</h2>
+                                    <input
+                                    placeholder="+234 803 555 0124"
+                                    type="tel"
+                                    className={`w-full rounded-xl  bg-white px-4 py-3 text-brand-light-text outline-none focus:outline-none focus:ring-0 mt-3 ${errors.tel ? "border-2 border-red-600" :"border border-brand-light-text/30"}`}
+                                    {...field('tel')}
+                                    />
+                                     {errors.tel && <p className="text-red-600 text-[12px] font-medium mt-2">{errors.tel}</p>}
+                                </div>
                            </div>
    
-                           {/* Benefits of ticket */}
-                           <div className="border-t border-[#707087]/20 py-4 mt-6">
-                               {/* Ticket quantity */}
-                               <div className="flex justify-between items-center">
-                                   <div>
-                                       <h1 className="text-[18px] text-brand-primary font-bold">Quantity</h1>
-                                       <p className="text-[12px] text-[#707087]">{event.type}</p>
-                                   </div>
-   
-                                   {/* Add and Subtract */}
-                                   <div className="flex gap-4 py-2 px-4 rounded-2xl border border-[#707087]/30">
-                                       <p onClick={() => {
-                                           setOrder({ ...order, qty: order.qty - 1 })
-                                       }}
-                                       className="font-bold text-[20px] text-[#707087] cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 ">-</p>
-                                       <p className="text-[20px] text-brand-primary font-bold ">{order.qty}</p>
-                                       <div>
-                                       <p onClick={() => {
-                                           setOrder({ ...order, qty: order.qty + 1 })
-                                       }}
-                                       className="font-bold text-[20px] text-brand-secondary cursor-pointer transition-all duration-300 ease-out hover:-translate-y-1 ">+</p>
-                                   </div>
-                               </div>
-                           </div>
-                       </div>
-   
-                       {/* Subtotal */}
-                       <div className="flex justify-between items-center mt-2">
-                           <p className="text-[14px] text-[#707087] font-light">Ticket subtotal</p>
-                           <p className="text-[16px] text-brand-primary font-semibold">{formatPrice(subtotal, ticket.currency)}</p>
-                       </div>
+
    
                        {/* segment */}
                        <div className="bg-[#F0EBFC] rounded-2xl p-5 flex items-start gap-3 mt-5">
-                           <HiOutlineTicket  className="text-brand-primary" size={20} />
+                           <LuLock  className="text-brand-primary" size={20} />
                            <div>
                                <h1 className="text-[16px] text-brand-primary font-bold">Picked up right where you left off</h1>
                                <p className="text-[13px] text-brand-primary font-medium">Your {ticket.name} selection from Buy Now is ready. No need to choose a ticket again.</p>
@@ -119,11 +132,10 @@ function DetailsStep () {
                        </div>
    
                        {/* Continue button */}
-                       <Link to="details">
-                       <button className="bg-brand-secondary text-white text-[18px] font-bold py-3 px-4 w-full rounded-3xl mt-5 transition-all duration-300 ease-out hover:-translate-y-1 cursor-pointer hover:text-brand-secondary hover:bg-brand-secondary/20">
-                           Continue          
+                       <button className="bg-brand-secondary text-white text-[18px] font-bold py-3 px-4 w-full rounded-3xl mt-5 transition-all duration-300 ease-out hover:-translate-y-1 cursor-pointer hover:text-brand-secondary hover:bg-brand-secondary/20"
+                       onClick={handleContinue}>
+                           Continue to Review         
                        </button>
-                       </Link>
    
                        {/* Comment */}
                        <div className="mt-5 flex justify-center items-center">

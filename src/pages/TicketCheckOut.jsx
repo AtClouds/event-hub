@@ -19,7 +19,11 @@ function TicketCheckout () {
            const orderFee = 250;
            const bookingFee = subtotal + orderFee;
         
-        
+        //Persistent state
+        const field = (name) => ({
+          value: order[name] ?? "",
+          onChange: (e) => setOrder({ ...order, [name]: e.target.value }),
+        });
 
 
 
@@ -28,7 +32,7 @@ function TicketCheckout () {
       return (
         <div>
         <CheckoutNavbar />
-        <Outlet context={{ event, ticket, order, setOrder, subtotal, orderFee, bookingFee }} />  
+        <Outlet context={{ event, ticket, order, setOrder, subtotal, orderFee, bookingFee, field }} />  
         <CheckoutFooter  />  
         </div>
       )
