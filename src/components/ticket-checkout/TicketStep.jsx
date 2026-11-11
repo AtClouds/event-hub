@@ -79,7 +79,7 @@ function TicketStep () {
                             ))}
                         </div>
 
-                        {/* Benefits of ticket */}
+                        {/* number of ticket */}
                         <div className="border-t border-brand-light-text/20 py-4 mt-6">
                             {/* Ticket quantity */}
                             <div className="flex justify-between items-center">

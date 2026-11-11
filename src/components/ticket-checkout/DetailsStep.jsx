@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function DetailsStep () {
 
-       const { event, ticket, order,  field  } = useOutletContext();
+       const {  ticket, order,  field  } = useOutletContext();
 
        const navigate = useNavigate();
    
@@ -46,11 +46,11 @@ function DetailsStep () {
                    {/* button */}
                    <div className=" transition-all duration-300 ease-out hover:-translate-y-1">
                        <Link
-                           to={`/events/${event.id}`}
+                           to=".."
                            className="flex items-center font-semibold text-[14px] gap-2 text-brand-secondary motion-card-button
                            cursor-pointer">
                             <FiArrowLeft />
-                           Back to event
+                           Back to tickets
                        </Link>
                    </div>
    
@@ -79,6 +79,8 @@ function DetailsStep () {
                                    <p className="font-semibold text-[14px] py-1 px-3 text-brand-secondary bg-brand-secondary/10 rounded-2xl">{ticket.name} &times; {order.qty}</p>
                                </div>
                            </div>
+
+
    
                            {/* ticket field */}
                            <div className="mt-6">

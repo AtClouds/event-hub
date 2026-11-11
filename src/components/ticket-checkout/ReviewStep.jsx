@@ -1,6 +1,5 @@
 import { useOutletContext,  Link } from "react-router";
 import { FiArrowLeft } from "react-icons/fi";
-import { LuLock } from "react-icons/lu";
 import { OderSummary } from "../ticket-check-out-UI/OrderSummary"; 
 import { LuCalendar, LuMapPin, LuPencil, LuCircleCheck } from "react-icons/lu";
 
@@ -28,11 +27,11 @@ function ReviewStep () {
                    {/* button */}
                    <div className=" transition-all duration-300 ease-out hover:-translate-y-1">
                        <Link
-                           to={`/events/${event.id}`}
+                           to="../details"
                            className="flex items-center font-semibold text-[14px] gap-2 text-brand-secondary motion-card-button
                            cursor-pointer">
                             <FiArrowLeft />
-                           Back to event
+                           Back to details
                        </Link>
                    </div>
    
@@ -113,10 +112,12 @@ function ReviewStep () {
                        </div>
    
                        {/* Continue button */}
+                       <Link to="../payment">
                        <button className="bg-brand-secondary text-white text-[18px] font-bold py-3 px-4 w-full rounded-3xl mt-5 transition-all duration-300 ease-out hover:-translate-y-1 cursor-pointer hover:text-brand-secondary hover:bg-brand-secondary/20"
                       >
                            Continue to Payment        
                        </button>
+                       </Link>
    
                        {/* Comment */}
                        <div className="mt-5 flex justify-center items-center">

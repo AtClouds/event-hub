@@ -12,6 +12,7 @@ import ReviewStep from "./components/ticket-checkout/ReviewStep.jsx"
 import PaymentStep from "./components/ticket-checkout/PaymentStep.jsx"
 import SuccessStep from "./components/ticket-checkout/SuccessStep.jsx"
 import DigitalTicketStep from "./components/ticket-checkout/DigitalSteps.jsx"
+import SoldOut from "./components/ticket-checkout/SoldOut.jsx"
 
 import './App.css'
 
@@ -35,6 +36,7 @@ function App() {
             <Route path="payment" element={<PaymentStep />} />
             <Route path="success" element={<SuccessStep />} />
             <Route path="digital-ticket" element={<DigitalTicketStep />} />
+            <Route path="sold-out" element={<SoldOut />} />
         </Route>
     </Routes>
   )

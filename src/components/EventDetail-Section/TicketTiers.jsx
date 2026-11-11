@@ -22,7 +22,7 @@ export function TicketTiers({event}) {
                 {/* card layout */}
                 <div className="flex flex-wrap justify-center gap-10">
                 {event.tickets.map((ticket) => (
-                    <TicketCards key={ticket.id} ticket={ticket} className="w-full sm:w-[300px]" />
+                    <TicketCards key={ticket.id} ticket={ticket} event={event} className="w-full sm:w-[300px]" />
                 ))}
                 </div>
             </div>
