@@ -1,8 +1,8 @@
-import { useOutletContext, Link } from "react-router";
+import { useOutletContext } from "react-router";
 import { LuCopy, LuCheck, LuClock } from "react-icons/lu";
 import { useState, useEffect } from "react";
 
-export function TransferMethod() {
+export function TransferMethod({ setStatus }) {
   const { ticket, bookingFee } = useOutletContext();
 
   // Transfer timer
@@ -118,11 +118,15 @@ export function TransferMethod() {
       </div>
 
       {/* Continue button */}
-      <Link to="../success">
-        <button className="bg-brand-secondary text-white text-[18px] font-bold py-3 px-4 w-full rounded-3xl mt-5 transition-all duration-300 ease-out hover:-translate-y-1 cursor-pointer hover:text-brand-secondary hover:bg-brand-secondary/20">
+    
+        <button className="bg-brand-secondary text-white text-[18px] font-bold py-3 px-4 w-full rounded-3xl mt-5 transition-all duration-300 ease-out hover:-translate-y-1 cursor-pointer hover:text-brand-secondary hover:bg-brand-secondary/20"
+        type="button"
+        onClick={() => {
+          setStatus("processing")
+        }}>      
           I've made the transfer
         </button>
-      </Link>
+
       {/* Comment */}
       <div className="mt-5 flex justify-center items-center">
         <p className="text-[13px] text-brand-light-text font-light">

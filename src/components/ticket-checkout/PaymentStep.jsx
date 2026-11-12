@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { TransferMethod } from "../ticket-check-out-UI/paymentCardMethod/TransferMethod";
 import { CardMethod } from "../ticket-check-out-UI/paymentCardMethod/CardMethod";
 import { FailedPayments } from "../ticket-check-out-UI/paymentCardMethod/FailedPayments"
+import { ProcessingPayment } from "../ticket-check-out-UI/paymentCardMethod/ProcessingPayment"
 const DECLINE_TEST_CARD = "4000 0000 0000 0002";
 
 function PaymentStep() {
@@ -20,7 +21,7 @@ function PaymentStep() {
      
             // check status 
             useEffect(() => {
-                              console.log("render, status is:", status); 
+                  
                 if (status !== "processing") return;
  
                 const id = setTimeout(() => {
@@ -45,8 +46,8 @@ function PaymentStep() {
 
 
 
-             if (status === "processing") return <p>Processing…</p>;
-             if (status === "failed") return <p><FailedPayments /></p>;
+             if (status === "processing") return <p><ProcessingPayment card={card} setMethod={setMethod} setStatus={setStatus} /></p>;
+             if (status === "failed") return <p><FailedPayments card={card} setMethod={setMethod} setStatus={setStatus} /></p>;
 
 
            return(
@@ -63,15 +64,15 @@ function PaymentStep() {
                                className="flex items-center font-semibold text-[14px] gap-2 text-brand-secondary motion-card-button
                                cursor-pointer">
                                 <FiArrowLeft />
-                               Back to payment
+                               Back to review
                            </Link>
                        </div>
        
                        {/* heading */}
                        <div>
-                           <h1 className="lg:text-[35px] md:text-[30px] text-[24px] text-brand-primary font-extrabold">That payment didn’t go through.</h1>
+                           <h1 className="lg:text-[35px] md:text-[30px] text-[24px] text-brand-primary font-extrabold">Make it official.</h1>
                            <p className="lg:text-[16px] text-[14px] text-brand-light-text font-medium ">
-                            Your order is saved. Try again or choose another way to pay.
+                            Choose how you’d like to pay. Your ticket is one step away.
                             </p>
                        </div>
                    </div>
@@ -82,7 +83,7 @@ function PaymentStep() {
                        {/* Card div */}
                        <div className="w-full grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr] mt-6 ">
        
-                           {/* Details card */}
+                           {/* Main card */}
                            <div className="bg-white rounded-3xl p-6 self-start">
        
                                {/* heading */}
@@ -148,7 +149,7 @@ function PaymentStep() {
                                <CardMethod card={card} setCard={setCard} setStatus={setStatus} status={status} />
                                :
                                 //Transfer form
-                                <TransferMethod />
+                                <TransferMethod setStatus={setStatus} status={status} />
                                 }
                                 
                                

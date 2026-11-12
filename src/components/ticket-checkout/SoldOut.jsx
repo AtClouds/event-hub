@@ -1,11 +1,11 @@
 import { useOutletContext,  Link } from "react-router";
 import { FiArrowLeft } from "react-icons/fi";
 import { OderSummary } from "../ticket-check-out-UI/OrderSummary"; 
-import { LuTicketX, LuCircleAlert,  LuCircleCheck } from "react-icons/lu";
+import { LuTicketX, LuCircleAlert } from "react-icons/lu";
 
  function SoldOut () {
    
-    const { event, ticket, order, setOrder, bookingFee, subtotal } = useOutletContext();
+    const { event, ticket, order, setOrder,  subtotal } = useOutletContext();
     
         
            const formatPrice = (amount, currency) =>
@@ -30,7 +30,7 @@ import { LuTicketX, LuCircleAlert,  LuCircleCheck } from "react-icons/lu";
                                className="flex items-center font-semibold text-[14px] gap-2 text-brand-secondary motion-card-button
                                cursor-pointer">
                                 <FiArrowLeft />
-                               Back to details
+                               Back to event
                            </Link>
                        </div>
        
@@ -47,7 +47,7 @@ import { LuTicketX, LuCircleAlert,  LuCircleCheck } from "react-icons/lu";
                        {/* Card div */}
                        <div className="w-full grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr] mt-6 ">
        
-                           {/* Tickets Review */}
+                           {/* Main details*/}
                            <div className="bg-white rounded-3xl p-6 self-start">
        
                                {/* heading */}

@@ -33,7 +33,7 @@ export function TicketCards ({ticket, event}) {
                 </ul>
                 {/* Buttons */}
                 <div className=" transition-all duration-300 ease-out hover:-translate-y-1">
-                    <Link to="`/events/${eventId}/checkout/${ticketId}`">
+                    <Link to={`/events/${event.id}/checkout/${ticket.id}`}>
                     <button className="bg-brand-secondary py-2 rounded-3xl text-white text-[14px] w-full cursor-pointer mt-4 transition motion-card-button">
                     Buy Now
                     </button>
