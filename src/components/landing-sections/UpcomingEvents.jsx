@@ -2,6 +2,7 @@ import { EventCard } from "../Landing-page-UI/EventCard"
 import { ChevronDown, ChevronUp } from "lucide-react"
 import { eventCategories } from "../landing-data/eventCategories";
 import { useState } from "react";
+import { Link } from "react-router";
 
 
 // UpcomingEvents.jsx (just renders whatever array it's handed)
@@ -90,6 +91,7 @@ export function UpcomingEvents({ events }) {
       </div>
 
       {/* load more button */}
+      <Link to="">
       <div className="flex justify-center items-center mt-12 mb-12
       group/button       
       text-[18px]
@@ -119,10 +121,11 @@ export function UpcomingEvents({ events }) {
         motion-card-button
         cursor-pointer
       " >
-          Load More  
+          View More  
       </button>
       </div>
-        
+       </Link> 
+
     </div>
     
   );
