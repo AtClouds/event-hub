@@ -8,7 +8,7 @@ export function Navbar() {
   return (
     <div className="">
       {/*Top nav bar Desktop*/}
-      <nav className="hidden lg:flex w-full items-center justify-between py-8 xl:px-[12%] lg:px-[6%] md:px-[5%]">
+      <nav className="hidden lg:flex w-full items-center justify-between  xl:px-[12%] lg:px-[6%] md:px-[5%]">
         {/*Logo*/}
         <div>
           <a href="">
@@ -39,7 +39,7 @@ export function Navbar() {
 
           {/*nav button*/}
           <div>
-            <button className="text-white xl:text-[24px] lg:text-[18px] font-regular border-2 border-white py-1.5 px-4.5 rounded-3xl transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 hover:brightness-110  cursor-pointer ">
+            <button className="text-white xl:text-[24px] lg:text-[18px] font-regular border-2 border-white py-1 px-5 rounded-2xl transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 hover:brightness-110  cursor-pointer ">
               Login
             </button>
           </div>

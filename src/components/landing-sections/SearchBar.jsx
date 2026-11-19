@@ -17,7 +17,6 @@ export function SearchBar({
   return (
     <div className="w-full flex justify-center items-center md:px-0 px-4  transition-all duration-300 ease-out mb-2 hover:-translate-y-2
      ">
-
       <div className="bg-brand-primary/80 backdrop-blur-md xl:w-[77%] md:w-[90%] w-full  flex flex-col md:flex-row items-center justify-between lg:px-20 px-10 gap-3  rounded-[20px] md:py-10 py-10 py-8transition motion-card-button ">
         {/* search event by title */}
         <div className="border-b border-white/50 w-full md:w-fit">
@@ -44,7 +43,7 @@ export function SearchBar({
         {/* search event by date */}
         <div className="w-full md:w-fit">
           <div >
-            <p className="text-[14px] text-white">Time</p>
+            <p className="text-[14px] text-white">Date</p>
             <div className=" relative  mt-5  border-b border-white/50">
 
                  {/* container */}

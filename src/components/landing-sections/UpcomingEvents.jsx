@@ -1,15 +1,14 @@
 import { EventCard } from "../Landing-page-UI/EventCard"
-import { ChevronDown, ChevronUp } from "lucide-react"
-import { eventCategories } from "../landing-data/eventCategories";
+import { EventCategories } from "../Landing-page-UI/EventCategories";
 import { useState } from "react";
 import { Link } from "react-router";
+import {  LuSearchX } from "react-icons/lu";
 
 
 // UpcomingEvents.jsx (just renders whatever array it's handed)
 export function UpcomingEvents({ events }) {
 
    const [category, setCategory] = useState("");
-   const [isOpen, setIsOpen] = useState(false);
 
     const categoryFilteredEvents = events.filter((event) => {
     return category === "" || event.categories.includes(category);
@@ -21,61 +20,26 @@ export function UpcomingEvents({ events }) {
     <div className="md:px-0 px-4">
       {/* Header and dropdown event filter */}
       <div className="flex justify-between items-center mb-8">
-
-         <div>
-             <h1 className="text-brand-primary lg:text-[40px] md:text-[20px] text-[18px] font-bold ">Upcoming Events</h1>
-         </div>
-
-          <div className="relative">
-               {/* dropdown */}
-           <div>
-               {/* container */}
-                 <div className="flex justify-center md:space-x-8 space-x-2 items-center bg-brand-primary/10 md:rounded-[20px] rounded-[5px] md:py-2 py-1  md:px-4 px-2">
-                     <p className="lg:text-[18px] md:text-[14px] text-[12px] text-brand-primary font-medium">{category === "" ? "Any Category" : category}</p>
-                  {!isOpen && (
-                  <ChevronDown 
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="w-4 h-4 md:w-6 md:h-6 text-brand-primary font-bold cursor-pointer" 
-                  />
-                )}
-                {isOpen && (
-                  <ChevronUp 
-                    onClick={() => setIsOpen(!isOpen)}
-                    className="w-4 h-4 md:w-6 md:h-6 text-brand-primary font-bold  cursor-pointer" 
-                  />
-                )}
-                 </div>
-
-                  {/*Dropdown of events months*/}
-                  {
-                  isOpen && (
-                  <div  className="absolute top-full left-0 w-full z-20 mt-2 bg-brand-primary/10 backdrop-blur-md max-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/40 scrollbar-track-transparent rounded-2xl p-3">
-                      {
-                        eventCategories.map((cat) => (
-                          <div
-                          key={cat.key}
-                          onClick={() => {
-                              setCategory(cat.label);
-                              setIsOpen(false);
-                          }}
-                          className="cursor-pointer hover:bg-white/30 px-2 py-1 text-[16px] rounded-[8px]"
-                          >
-                          {cat.label}   
-                          </div>
-                        ))
-                      }
-                  </div>   
-                  )}
-          </div>
-          </div>
-         
-
+        <div>
+            <h1 className="text-brand-primary xl:text-[40px] lg:text-[30px] md:text-[20px] text-[14px] font-bold ">Upcoming Events</h1>
+        </div>
+        <EventCategories category={category} setCategory={setCategory}   />
       </div>
-
 
       {/* Upcoming events preview cards */}
       <div className="">
-      {categoryFilteredEvents.length === 0 ? "Hey! we don't currently have any event's by that search!" :
+      {categoryFilteredEvents.length === 0 ? 
+      <div className="flex justify-center items-center flex-col ">
+                      {/* Icon */}
+                      <div className="bg-[#F2F4FF] p-8 rounded-full  ">
+                         <LuSearchX size={40} className="text-[#3D37F1] " />
+                      </div>
+      
+                      <h1 className="lg:text-[40px] md:text-[30px] text-[24px] text-brand-primary font-black text-center mt-2">No events match your filters</h1>
+                      <p className="text-[14px] lg:text-[16px] text-brand-light-text font-normal w-[80%] md:w-[60%] lg:w-[50%] text-center mt-2 ">Try a different search, date or location, or clear your filters to explore all events.</p>
+      
+                    </div>
+       :
       <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-col-2 xl:gap-15 gap-4">
        {previewEvents.map((event, index) => (
           <div 
@@ -91,12 +55,12 @@ export function UpcomingEvents({ events }) {
       </div>
 
       {/* load more button */}
-      <Link to="">
+      <Link to="/all-event">
       <div className="flex justify-center items-center mt-12 mb-12
       group/button       
       text-[18px]
       font-medium
-      text-balck
+      text-black
       transition-all
       duration-300
       ease-out

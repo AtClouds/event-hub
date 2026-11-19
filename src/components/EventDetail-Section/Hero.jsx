@@ -8,7 +8,7 @@ export function Hero({event}) {
   return (
     <div className="relative">
        {/*NavBar*/}
-        <div className="absolute inset-x-0 top-0 z-20"> 
+        <div className="absolute inset-x-0 top-0 z-20 py-8"> 
           <Navbar /> 
         </div>
 
