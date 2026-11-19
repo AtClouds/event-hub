@@ -1,6 +1,7 @@
 import logo from "../../assets/logo.png";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,20 +19,25 @@ export function Navbar() {
 
         {/*nav links*/}
         <div className="flex items-center justify-between space-x-8">
-          <a
-            href=""
+          <Link
+            to="/"
             className="text-white xl:text-[24px] lg:text-[18px] font-regular transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 hover:brightness-110  cursor-pointer"
           >
-            Schedule
-          </a>
-          <a
-            href=""
+            Home
+          </Link>
+          <Link
+            to="/all-event"
             className="text-white xl:text-[24px] lg:text-[18px] font-regular transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 hover:brightness-110  cursor-pointer"
           >
             Events
-          </a>
+          </Link>
           <a
-            href=""
+            onClick={() =>
+              window.scrollTo({
+                top: document.documentElement.scrollHeight,
+                behavior: "smooth",
+              })
+            }
             className="text-white xl:text-[24px] lg:text-[18px] font-regular transition-all duration-300 ease-out hover:-translate-y-1 active:translate-y-0 hover:brightness-110  cursor-pointer"
           >
             Contact
