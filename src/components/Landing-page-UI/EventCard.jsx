@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 
-
 export function EventCard({ event }) {
   /* =========================================================
      2. MOUSE ENTER HANDLER
@@ -129,67 +128,69 @@ export function EventCard({ event }) {
     animation: "cardEnter 0.7s ease-out forwards",
   };
 
-  {/* Date logic */}
+  {
+    /* Date logic */
+  }
   const date = new Date(event.date);
   const month = date.toLocaleString("en-US", { month: "short" }).toUpperCase();
   const day = date.getDate();
 
-    /* =========================================================
+  /* =========================================================
      5. COMPONENT UI
      Main structure of the animated motion card.
      ========================================================= */
 
-        return(
-           <div className="">
-          {/* =====================================================
+  return (
+    <div className="">
+      {/* =====================================================
           5.1 MAIN CARD CONTAINER
           Handles mouse interaction and the main 3D rotation.
           ===================================================== */}
 
-          <div
-            onMouseEnter={handleMouseEnter}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={(e) => {
-              const card = e.currentTarget;
+      <div
+        onMouseEnter={handleMouseEnter}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={(e) => {
+          const card = e.currentTarget;
 
-              if (!card) return;
+          if (!card) return;
 
-              card.style.transition = "transform 0.5s ease-out";
+          card.style.transition = "transform 0.5s ease-out";
 
-              card.style.transform = `
+          card.style.transform = `
             perspective(900px)
             rotateX(0deg)
             rotateY(0deg)
             scale(1)
           `;
 
-              /* -------------------------------------------------
+          /* -------------------------------------------------
              5.1.1 Reset Lighting Position
              Returns the lighting variables to the center
              when the cursor leaves the card.
              ------------------------------------------------- */
 
-              card.style.setProperty("--light-x", "50%");
-              card.style.setProperty("--light-y", "50%");
+          card.style.setProperty("--light-x", "50%");
+          card.style.setProperty("--light-y", "50%");
 
-              /* -------------------------------------------------
+          /* -------------------------------------------------
              5.1.2 Reset Content Position
              Returns the content to its original position
              after the cursor leaves the card.
              ------------------------------------------------- */
 
-              const content = card.querySelector(".motion-card-content");
+          const content = card.querySelector(".motion-card-content");
 
-              if (content) {
-                content.style.transform = `
+          if (content) {
+            content.style.transform = `
               translateZ(35px)
               translateX(0px)
               translateY(0px)
             `;
-              }
-            }}
-            style={cardEnter}
-            className="
+          }
+        }}
+        style={cardEnter}
+        className="
           motion-card
           motion-card-enter
           group
@@ -203,30 +204,30 @@ export function EventCard({ event }) {
           shadow-[0_20px_15px_rgba(0,0,0,0.12)]
           will-change-transform
         "
-          >
-            {/* =================================================
+      >
+        {/* =================================================
             5.2 ANIMATED BORDER
             Creates the cursor-following glowing rim around
             the card.
             ================================================= */}
 
-            <div className="motion-card-border" />
+        <div className="motion-card-border" />
 
-            {/* =================================================
+        {/* =================================================
             5.3 CURSOR LIGHT / GLOW
             Creates the soft light that follows the cursor.
             ================================================= */}
 
-            <div className="motion-card-glow" />
+        <div className="motion-card-glow" />
 
-            {/* =================================================
+        {/* =================================================
             5.4 INNER CARD
             Contains the actual visible card content and
             mouse-following background lighting.
             ================================================= */}
 
-            <div
-              className="
+        <div
+          className="
             motion-card-inner
             relative z-10
             h-full w-full
@@ -237,8 +238,8 @@ export function EventCard({ event }) {
             duration-500
             [transform-style:preserve-3d]
           "
-              style={{
-                 background: `
+          style={{
+            background: `
                 radial-gradient(
                   380px circle at var(--mouse-x) var(--mouse-y),
                   rgba(236,72,153,0.10),
@@ -247,16 +248,16 @@ export function EventCard({ event }) {
                 ),
                 white
               `,
-              }}
-            >
-              {/* =================================================
+          }}
+        >
+          {/* =================================================
               5.5 MOVING SHINE
               Creates a subtle reflective light streak that
               moves across the card based on cursor position.
               ================================================= */}
 
-              <div
-                className="
+          <div
+            className="
               pointer-events-none
               absolute
               inset-0
@@ -266,8 +267,8 @@ export function EventCard({ event }) {
               duration-300
               group-hover:opacity-100
             "
-                style={{
-                  background: `
+            style={{
+              background: `
                 linear-gradient(
                   115deg,
                   transparent 20%,
@@ -277,23 +278,23 @@ export function EventCard({ event }) {
                 )
               `,
 
-                  transform: "translateX(calc(var(--mouse-x) - 360px))",
-                }}
-              />
+              transform: "translateX(calc(var(--mouse-x) - 360px))",
+            }}
+          />
 
-              {/* =================================================
+          {/* =================================================
               5.6 TOP CONTENT SECTION
               Contains the icon, category label, title and
               description.
               ================================================= */}
 
-              <div>
-                {/* -------------------------------------------------
+          <div>
+            {/* -------------------------------------------------
                 5.6.1 3D ICON
                 Floats the icon forward in 3D space.
                 ------------------------------------------------- */}
-                <div
-                  className="
+            <div
+              className="
                 mb-4
                 flex 
                 w-full
@@ -302,73 +303,70 @@ export function EventCard({ event }) {
                 text-xl text-white
                 [transform:translateZ(50px)]
               "
-                >
-                  <img
-                    src={event.banner}
-                    alt=""
-                    className="w-full h-[220px] object-cover overflow-hidden"
-                  />
-                </div>
+            >
+              <img
+                src={event.banner}
+                alt=""
+                className="w-full h-[220px] object-cover overflow-hidden"
+              />
+            </div>
 
-                <div className="px-7">
-                  {/* -------------------------------------------------
+            <div className="px-7">
+              {/* -------------------------------------------------
                 5.6.2 TEXT CONTENT
                 Moves independently toward the cursor to
                 enhance the 3D depth effect.
                 ------------------------------------------------- */}
-                <div className="flex  items-center gap-3 motion-card-content mb-3">
-
-                    {/* -----------------------
+              <div className="flex  items-center gap-3 motion-card-content mb-3">
+                {/* -----------------------
                     date
                     ----------------------------*/}
-                    <div className="flex flex-col justify-center items-center">
-                       <p className="text-[#3D37F1] font-medium text-[12px]">
-                        {month}
-                        </p>
-                       <p className="text-black font-bold text-[30px]">
-                        {day}
-                        </p>
-                    </div>
+                <div className="flex flex-col justify-center items-center">
+                  <p className="text-[#3D37F1] font-medium text-[12px]">
+                    {month}
+                  </p>
+                  <p className="text-black font-bold text-[30px]">{day}</p>
+                </div>
 
-                    {/* -------------------------
+                {/* -------------------------
                     title and description
                     -----------------------------*/}
-                    <div>
-                      <h2
-                      className="
+                <div>
+                  <h2
+                    className="
                       xl:text-[20px]
                       text-[16px]
                       font-bold
                     text-black
                       "
-                      >
-                     {event.title}
-                    </h2>
+                  >
+                    {event.title}
+                  </h2>
 
-                    <p
-                      className="
+                  <p
+                    className="
                       xl:text-[14px]
                       text-[12px]
                       text-black
                        "
-                    >
+                  >
                     {event.description.length > 100
-                    ? event.description.slice(0, 100) + "..."
-                    : event.description}
-                    </p>
-                    </div>
+                      ? event.description.slice(0, 60) + "..."
+                      : event.description}
+                  </p>
                 </div>
+              </div>
 
-                  {/* =================================================
+              {/* =================================================
               5.7 BOTTOM ACTION SECTION
               Contains the Explore button and arrow interaction.
               ================================================= */}
 
-                  <div
-                    className="
+              <div
+                className="
               group/button
               flex w-full
-              items-center justify-between
+              items-center
               rounded-xl
               border border-brand-secondary/30
               bg-brand-primary/[0.2]
@@ -385,14 +383,14 @@ export function EventCard({ event }) {
               hover:border-brand-primary/30
               hover:bg-brand-secondary[0.2]
             "
-                  >
-                    {/* -------------------------------------------------
+              >
+                {/* -------------------------------------------------
                 5.7.1 EXPLORE BUTTON
                 Main interactive button with 3D depth.
                 ------------------------------------------------- */}
-                <Link to={`/events/${event.id}`}>
-                <button
-                className="
+                <Link className="w-full" to={`/events/${event.id}`}>
+                  <button
+                    className="
                 flex w-full
                 items-center
                 justify-between
@@ -411,33 +409,33 @@ export function EventCard({ event }) {
                 motion-card-button
                 cursor-pointer
               "
-                    >
-                      <span className="px-2">Explore</span>
+                  >
+                    <span className="px-2">Explore</span>
 
-                      {/* -----------------------------------------------
+                    {/* -----------------------------------------------
                   5.7.2 BUTTON ARROW
                   Slides slightly to the right when the button
                   is hovered.
                   ----------------------------------------------- */}
 
-                      <span
-                        className="
+                    <span
+                      className="
                   text-lg
                   transition-transform
                   duration-300
                   group-hover/button:translate-x-1
                   motion-card-icon
                 "
-                      >
-                        →
-                      </span>
-                    </button>
-                    </Link>
-                  </div>
-                </div>
+                    >
+                      →
+                    </span>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        )
+      </div>
+    </div>
+  );
 }
